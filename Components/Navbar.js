@@ -23,13 +23,14 @@ const navigation = {
 export default function Navabr({navigator='user', title='App / Ui', logo=<TbBrandHeadlessui className="size-full" />}){
 
     const [isDarkMode, setDarkMode] = useState(true)
+    const [isNavOpen, setNavOpen] = useState(false)
 
     function handleDarkMode(){
         themeChange(isDarkMode);
         setDarkMode(!isDarkMode);
     }
 
-    return <div className="sticky z-[100] top-0 w-full flex items-center justify-between px-5 h-16 font-sans text-sm shadow-[0_0_1px] backdrop-blur-md bg-transparent">
+    return <div className="sticky z-[500] top-0 w-full flex items-center justify-between px-5 h-16 font-sans text-sm shadow-[0_0_1px] backdrop-blur-sm bg-transparent">
         <div>
             {/* For Pc */}
             <div className="flex items-center gap-5 max-sm:hidden">
@@ -44,7 +45,22 @@ export default function Navabr({navigator='user', title='App / Ui', logo=<TbBran
                 </div>
             </div>
             {/* For Mobile */}
-            <div className="sm:hidden"><Navicon/></div>
+            <button onClick={()=>setNavOpen(!isNavOpen)}  className="sm:hidden"><Navicon/></button>  
+
+            <div className="flex items-end z-[-1] justify-center w-[100vw] h-[100vh] fixed left-0 transition-all duration-300 origin-center"
+                style={{
+                    opacity: isNavOpen ? '1' : '0',
+                    visibility: isNavOpen ? 'visible' : 'hidden',
+                    top: isNavOpen ? '0vh' : '100vh',
+                    scale: isNavOpen ? '1' : '0'
+                }}
+            >
+                <div className="relative flex flex-col items-start gap-3 w-full h-[70vh] rounded-lg border-[1px] border-[var(--bgSec)] after:content-[''] after:absolute after:top-3 after:w-[100px] after:border-2 after:border-[var(--bgSec)] after:self-center after:rounded-full pt-5 px-5">
+                {navigation[navigator].map((element, index) => (<Link key={index} href={element.href} className="opacity-70 hover:opacity-100 font-semibold w-full">
+                        <UnderlineBox className='' innerText={element.title} />
+                    </Link>))}
+                </div>
+            </div>
         </div>
         
         <div className="flex gap-2">
