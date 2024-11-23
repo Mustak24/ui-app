@@ -3,7 +3,7 @@ const themes = {
         ['--bg', 'rgb(9, 9, 11)'],
         ['--text', 'rgb(250, 250, 250)'],
         ['--bgSec', 'rgb(39 39 42)'],
-        ['--textSec', '--textSec: rgb(244, 244, 245)']
+        ['--textSec', 'rgb(244, 244, 245)']
     ],
     light: [
         ['--bg', 'rgb(250, 250, 250)'],
