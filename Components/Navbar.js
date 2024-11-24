@@ -8,7 +8,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
 import { TbBrandHeadlessui } from "react-icons/tb";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
-import Popover, {TargetBtnOnHover ,TargetBox} from "./Popover";
+import {Popover, PopoverOnHover} from "./Popover";
 
 
 
@@ -73,29 +73,23 @@ export default function Navabar({
         </div>
         
         <div className="flex gap-2">
-            {navigator == 'user' && <>
-                <NormalBtn className="max-sm:hidden"><span className="text-nowrap text-clip">Search Documentation ...</span></NormalBtn>
-                <button><HoverBox className="sm:hidden"><IoSearchSharp className="size-full" /></HoverBox></button>
-            </>}
+            <NormalBtn className="max-sm:hidden"><span className="text-nowrap text-clip">Search Documentation ...</span></NormalBtn>
+            <button><HoverBox className="sm:hidden"><IoSearchSharp className="size-full" /></HoverBox></button>
 
             <Link href={'https://github.com/Mustak24/Notes-with-Bot'} target="_black">
-                <Popover className="flex items-center justify-center">
-                    <TargetBtnOnHover>
-                        <HoverBox><IoLogoGithub className="size-full" /></HoverBox>
-                    </TargetBtnOnHover>
-                    <TargetBox className='top-full translate-y-1 bg-[var(--bgSec)] px-2 rounded-lg py-2 w-20 text-center'>Git-Hub</TargetBox>
-                </Popover>
+                <PopoverOnHover className="flex items-center justify-center">
+                    <HoverBox><IoLogoGithub className="size-full" /></HoverBox>
+                    <Popover className='top-full translate-y-1 bg-[var(--bgSec)] px-2 rounded-lg py-2 w-20 text-center'>Git-Hub</Popover>
+                </PopoverOnHover>
             </Link> 
 
             {darkMode && <div onClick={handleDarkMode}>
-            <Popover>
-                <TargetBtnOnHover>
-                    <HoverBox>
-                        {isDarkMode ? <MdOutlineLightMode className="size-full" /> : <MdOutlineDarkMode className="size-full" />}
-                    </HoverBox>
-                </TargetBtnOnHover>
-                <TargetBox className='right-0 translate-y-1 top-full bg-[var(--bgSec)] text-center w-24 h-fit rounded-lg py-2'>{isDarkMode ? 'Dark Mode' : 'Light Mode'}</TargetBox>
-            </Popover>
+            <PopoverOnHover>
+                <HoverBox>
+                    {isDarkMode ? <MdOutlineLightMode className="size-full" /> : <MdOutlineDarkMode className="size-full" />}
+                </HoverBox>
+                <Popover className='right-0 translate-y-1 top-full bg-[var(--bgSec)] text-center w-24 h-fit rounded-lg py-2'>{isDarkMode ? 'Dark Mode' : 'Light Mode'}</Popover>
+            </PopoverOnHover>
             </div>}
 
         </div>
