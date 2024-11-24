@@ -10,13 +10,11 @@ export default function App({ Component, pageProps }) {
 
   return<>
     <AppContextProvider>
-      <div className="w-full h-full overflow-x-hidden relative flex flex-col pt-16">
         <Scrollbar/>
         <PageLoader/>
         <Alert/>
         <Navbar/>
         <Component {...pageProps} />
-      </div>
     </AppContextProvider>
   </>
 }

@@ -1,5 +1,5 @@
-export function UnderlineBox({children, innerText='Hover Me'}){
-    return <div className={`relative w-fit flex items-center justify-center after:content-[''] after:absolute after:border-2 after:rounded-full after:w-0 sm:hover:after:w-full max-sm:active:after:w-full px-2 after:top-full after:opacity-0 sm:hover:after:opacity-100 max-sm:active:after:opacity-100 after:transition-all sm:duration-200`}>
+export function UnderlineBox({children, innerText='Hover Me', className}){
+    return <div className={`${className} cursor-pointer relative w-fit flex items-center justify-center after:content-[''] after:absolute after:border-2 after:rounded-full after:w-0 sm:hover:after:w-full max-sm:active:after:w-full px-2 after:top-full after:opacity-0 sm:hover:after:opacity-100 max-sm:active:after:opacity-100 after:transition-all sm:duration-200`}>
         {innerText} {children}
     </div>
 }
