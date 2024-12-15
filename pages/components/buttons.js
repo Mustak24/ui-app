@@ -3,7 +3,7 @@ import { Asidebar, Main, MainHeading } from ".";
 import { Button, ClassicButton01, LongWidthBnt, NormalBtn, RoundButton } from "@/Components/Button";
 import ComponentCard from "@/Components/ComponentCard";
 
-export default function(){
+export default function Buttons(){
     return <div className="flex relative w-full h-full">
         <Asidebar/>
         <Main>

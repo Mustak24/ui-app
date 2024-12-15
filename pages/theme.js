@@ -1,6 +1,5 @@
-import Navbar from "@/Components/Navbar";
 
-export default function Home() {
+export default function Theme() {
   return (<main>
     Theme
   </main>);

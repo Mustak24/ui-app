@@ -4,7 +4,7 @@ import { capitalize } from "@/Functions/helper";
 import { MdContentCopy } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa6";
 
-export default function () {
+export default function Colors() {
   return (
     <main>
       <div className="flex flex-col gap-1 px-5 pt-10 pb-16">
@@ -47,8 +47,8 @@ export default function () {
           "fuchsia",
           "pink",
           "rose",
-        ].map((color) => (
-          <ColorCard color={color} />
+        ].map((color, key) => (
+          <ColorCard color={color} key={key} />
         ))}
       </div>
     </main>
@@ -88,8 +88,8 @@ function ColorCard({ color }) {
         </PopoverOnFocus>
       </div>
       <div className="flex sm:flex-wrap max-sm:flex-col items-center gap-2 sm:justify-stretch">
-        {colors.map((bg) => (
-          <div className="min-w-[100px] cursor-pointer gap-1 h-[180px] rounded-md w-full flex items-center justify-center flex-col sm:flex-1 relative group">
+        {colors.map((bg, key) => (
+          <div key={key} className="min-w-[100px] cursor-pointer gap-1 h-[180px] rounded-md w-full flex items-center justify-center flex-col sm:flex-1 relative group">
             <div className={`${bg} w-full h-full rounded-md shadow-[0_0_1px_var(--textSec)]`}></div>
             <div className="group-hover:brightness-100 brightness-50 transition-all text-[12px]">
               {bg.slice(3)}

@@ -3,7 +3,7 @@ import { Asidebar, Main, MainHeading } from ".";
 import ComponentCard from "@/Components/ComponentCard";
 import { ClassicInput, DefaultTextarea, Input, Input01, Textarea } from "@/Components/Input";
 
-export default function(){
+export default function Inputs(){
     return <main className="flex w-full h-full">
         <Asidebar/>
         <Main>

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { UnderlineBox } from "./Smallcss"
 
-export default function({children, code='Soon', name=''}){
+export default function ComponentCard({children, code='Soon', name=''}){
 
     const [optionIsCode, setOptionIsCode] = useState(false)
 

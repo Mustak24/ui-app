@@ -1,7 +1,7 @@
 import { Main, MainHeading } from ".";
 import { Asidebar } from ".";
 
-export default function(){
+export default function Loaders(){
     return <main className="flex w-full h-full">
         <Asidebar/>
         <Main>

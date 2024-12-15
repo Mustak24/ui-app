@@ -3,7 +3,7 @@ import { UnderlineBox } from "@/Components/Smallcss";
 import Link from "next/link";
 import { TypingHeading } from "@/Components/Heading";
 
-export default function(){
+export default function Index(){
     return (<div className="flex relative w-full h-full sm:p-2">
         <Asidebar/>
         <Main></Main>
