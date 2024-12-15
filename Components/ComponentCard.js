@@ -13,7 +13,7 @@ export default function({children, code='Soon', name=''}){
         </div>
         <hr className="borde-2 border-[var(--text)] opacity-20 mb-5"/>
         <div className="flex items-center justify-center relative h-[400px]">
-            <div className="flex items-center justify-center relative w-full h-full shadow-[0_0_1px_var(--text)] box-border my-5 rounded-lg"
+            <div className="p-10 flex items-center justify-center relative w-full h-full shadow-[0_0_1px_var(--text)] box-border my-5 rounded-lg"
                 style={{
                     opacity: !optionIsCode ? '1' : '0',
                     scale: !optionIsCode ? '1' : '.5',

@@ -24,7 +24,7 @@ const navigation = {
 export default function Navabar({
     darkMode=true, 
     navigator='user', 
-    title='Chat-Bot', 
+    title='Ui-App', 
     logo=<TbBrandHeadlessui className="size-full" />
 }){
 

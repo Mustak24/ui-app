@@ -1,4 +1,4 @@
-import { PathnameHeaading, TypingHeading } from "@/Components/Heading";
+
 import { Asidebar, Main, MainHeading } from ".";
 import { Button, ClassicButton01, LongWidthBnt, NormalBtn, RoundButton } from "@/Components/Button";
 import ComponentCard from "@/Components/ComponentCard";
