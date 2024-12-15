@@ -12,7 +12,7 @@ export default function(){
                 sec="Displays a form input field or a component that looks like an input field."
             />
 
-            <div className="flex flex-wrap justify-stretch gap-5">
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
                 <ComponentCard name="Input">
                     <Input01/>
                 </ComponentCard>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { TypingHeading } from "@/Components/Heading";
 
 export default function(){
-    return (<div className="flex relative w-full h-full">
+    return (<div className="flex relative w-full h-full sm:p-2">
         <Asidebar/>
         <Main></Main>
     </div>)
@@ -12,7 +12,7 @@ export default function(){
 
 export function Asidebar(){
     return<>
-    <aside className="flex top-0 w-[200px] flex-col h-full shadow-[0_0_1px_var(--textSec)] p-10 gap-4 box-border">
+    <aside className="flex top-0 w-[200px] flex-col h-full shadow-[0_0_1px_var(--textSec)] p-10 gap-4 box-border max-md:hidden">
             <div className="font-semibold brightness-200 text-ld">Components</div>
             <div className="flex flex-col text-[var(--textSec)] text-sm gap-2">
                 <Link href={'/components/buttons'}>
@@ -39,7 +39,7 @@ export function Asidebar(){
 }
 
 export function Main({children, className=''}){
-    return <main className={`${className} w-full p-5 overflow-x-hidden overflow-y-scroll`}>
+    return <main className={`${className} w-full p-5 max-sm:px-2 overflow-x-hidden overflow-y-scroll`}>
         <PathnameHeaading/>
         {children}
     </main>

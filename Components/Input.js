@@ -3,7 +3,7 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useState, useEffect } from "react";
 
 export function Input01({type='text', placeholder='Enter text here ...'}){
-    return <div className="group relative flex items-center w-full max-w-[400px] h-8 shadow-[0_0_1px] rounded-md transition-all overflow-hidden">
+    return <div className="group relative flex items-center w-full min-w-[180px] max-w-[400px] h-8 shadow-[0_0_1px] rounded-md transition-all overflow-hidden">
         <input 
             type={type} 
             placeholder={placeholder}

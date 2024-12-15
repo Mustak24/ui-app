@@ -8,7 +8,7 @@ export default function(){
         <Asidebar/>
         <Main>
             <MainHeading className="my-5" pri="Buttons" sec="Displays a button or a component that looks like a button."/> 
-            <div className="flex flex-wrap justify-stretch gap-5">
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
 
                 <ComponentCard name="Dynamic Rounded Button">
                     <Button scale={70}>Hove Me</Button>

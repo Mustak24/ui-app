@@ -18,6 +18,17 @@ const navigation = {
         {title: 'Components', href: '/components'},
         {title: 'Themes', href: '/themes'},
         {title: 'Colors', href: '/colors'},
+    ],
+    'mobile-user': [
+        {title: 'Docs', href: '/docs'},
+        {title: 'Themes', href: '/themes'},
+        {title: 'Colors', href: '/colors'},
+        {title: 'Components', href: '/components'},
+        {title: 'Inputs', href: '/components/inputs'},
+        {title: 'Buttons', href: '/components/buttons'},
+        {title: 'Cards', href: '/components/cards'},
+        {title: 'Loaders', href: '/components/loaders'},
+        {title: 'Popovers', href: '/components/popovers'},
     ]
 }
 
@@ -64,8 +75,8 @@ export default function Navabar({
                     top: isNavOpen ? '0vh' : '100vh',
                 }}
             >
-                <div className="relative flex flex-col bg-[var(--bg)] items-start gap-3 w-full h-[70vh] rounded-lg border-[1px] border-[var(--bgSec)] after:content-[''] after:absolute after:top-3 after:w-[100px] after:border-2 after:border-[var(--bgSec)] after:self-center after:rounded-full pt-5 px-5">
-                {navigation[navigator].map((element, index) => (<Link key={index} href={element.href} className="opacity-70 hover:opacity-100 font-semibold w-full">
+                <div onClick={()=>setNavOpen(false)} className="relative flex flex-col bg-[var(--bg)] items-start gap-3 w-full h-[70vh] rounded-lg border-[1px] border-[var(--bgSec)] after:content-[''] after:absolute after:top-3 after:w-[100px] after:border-2 after:border-[var(--bgSec)] after:self-center after:rounded-full pt-5 px-5">
+                {navigation[`mobile-${navigator}`].map((element, index) => (<Link key={index} href={element.href} className="opacity-70 hover:opacity-100 font-semibold w-full">
                         <UnderlineBox className='' innerText={element.title} />
                     </Link>))}
                 </div>

@@ -6,7 +6,7 @@ export default function(){
         <Asidebar/>
         <Main>
             <MainHeading className="my-5" pri="Loader" sec="Displays a card with header, content, and footer."/> 
-            <div className="flex flex-wrap justify-stretch gap-5">
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
 
             </div>     
         </Main>
