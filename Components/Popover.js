@@ -15,7 +15,7 @@ export function PopoverOnFocus({children, position='relative', className=''}){
 export function PopoverOnHover({children, position='relative', className=''}){
     const [isOpen, setOpen] = useState(false)
     return <>
-        <div className={className} style={{position}} onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)} >
+        <div className={className} style={{position}} onMouseEnter={()=>setOpen(true && window.innerWidth > 640)} onMouseLeave={()=>setOpen(false)} >
             <PopoverContext.Provider value={{isOpen}} >{children}</PopoverContext.Provider>
         </div>
     </>

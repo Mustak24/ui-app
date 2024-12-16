@@ -87,7 +87,7 @@ export default function Navabar({
             <NormalBtn className="max-sm:hidden"><span className="text-nowrap text-clip">Search Documentation ...</span></NormalBtn>
             <button><HoverBox className="sm:hidden"><IoSearchSharp className="size-full" /></HoverBox></button>
 
-            <Link href={'https://github.com/Mustak24/Notes-with-Bot'} target="_black">
+            <Link href={'https://github.com/Mustak24/ui-app'} target="_black">
                 <PopoverOnHover className="flex items-center justify-center">
                     <HoverBox><IoLogoGithub className="size-full" /></HoverBox>
                     <Popover className='top-full translate-y-1 bg-[var(--bgSec)] px-2 rounded-lg py-2 w-20 text-center'>Git-Hub</Popover>

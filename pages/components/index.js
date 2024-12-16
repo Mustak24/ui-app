@@ -2,11 +2,66 @@ import { PathnameHeaading } from "@/Components/Heading";
 import { UnderlineBox } from "@/Components/Smallcss";
 import Link from "next/link";
 import { TypingHeading } from "@/Components/Heading";
+import { Button, ClassicButton01, LongWidthBnt, NormalBtn, RoundButton } from "@/Components/Button";
+import { ClassicInput, DefaultTextarea, Input, Input01, Textarea } from "@/Components/Input";
+import ComponentCard from "@/Components/ComponentCard";
+
 
 export default function Index(){
-    return (<div className="flex relative w-full h-full sm:p-2">
+    return (<div className="flex relative w-full h-full">
         <Asidebar/>
-        <Main></Main>
+        <Main>
+            <MainHeading className="my-5" pri="Browse all" sec="Open-Source UI elements made with CSS or Tailwind."/> 
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
+                <ComponentCard name="Dynamic Rounded Button">
+                    <Button scale={70}>Hove Me</Button>
+                </ComponentCard>
+            
+                <ComponentCard name="Normal Button" >
+                    <NormalBtn>Hove Me</NormalBtn>
+                </ComponentCard>
+
+                <ComponentCard name="Normal input-password">
+                    <Input type='password'/>
+                </ComponentCard>
+
+                <ComponentCard name="Textarea">
+                    <Textarea/>
+                </ComponentCard>
+
+                <ComponentCard name="Circular Button" >
+                    <RoundButton>Click</RoundButton>
+                </ComponentCard>
+
+                <ComponentCard name="Dynamic Long width Button">
+                    <LongWidthBnt>Hove Me</LongWidthBnt>
+                </ComponentCard>
+
+                <ComponentCard name="Input">
+                    <Input01/>
+                </ComponentCard>
+
+                <ComponentCard name="Dynamic Button">
+                    <ClassicButton01>Hove Me</ClassicButton01>
+                </ComponentCard>
+
+                <ComponentCard name="Textarea default">
+                    <DefaultTextarea/>
+                </ComponentCard>
+
+                <ComponentCard name="Normal input-text">
+                    <Input/>
+                </ComponentCard>
+
+                <ComponentCard name="Dynamic animate-input-text">
+                    <ClassicInput/>
+                </ComponentCard>
+
+                <ComponentCard name="Dynamic animate-input-password ">
+                    <ClassicInput type='password'/>
+                </ComponentCard>
+            </div>
+        </Main>
     </div>)
 }
 
@@ -30,7 +85,7 @@ export function Asidebar(){
                 <Link href={'/components/inputs'}>
                     <UnderlineBox innerText="Inputs" className='pl-0 cursor-pointer' />
                 </Link>
-                <Link href={'/components/loader'}>
+                <Link href={'/components/loaders'}>
                     <UnderlineBox innerText="Loaders" className='pl-0 cursor-pointer' />
                 </Link>
             </div>
