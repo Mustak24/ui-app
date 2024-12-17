@@ -15,7 +15,7 @@ export default function Doc() {
     Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
     </p>
     <p className="my-5">
-    This is <b>NOT</b> a component library. It's a collection of re-usable components that you can copy and paste into your apps.
+      This is <b>NOT</b> a component library. {"It's"} a collection of re-usable components that you can copy and paste into your apps.
     </p>
   </main>);
 }
