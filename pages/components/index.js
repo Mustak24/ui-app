@@ -2,9 +2,9 @@ import { PathnameHeaading } from "@/Components/Heading";
 import { UnderlineBox } from "@/Components/Smallcss";
 import Link from "next/link";
 import { TypingHeading } from "@/Components/Heading";
-import { Button, ClassicButton01, LongWidthBnt, NormalBtn, RoundButton } from "@/Components/Button";
-import { ClassicInput, DefaultTextarea, Input, Input01, Textarea } from "@/Components/Input";
 import ComponentCard from "@/Components/ComponentCard";
+import * as inputs from '@/Components/Input';
+import * as buttons from '@/Components/Button';
 
 
 export default function Index(){
@@ -13,53 +13,17 @@ export default function Index(){
         <Main>
             <MainHeading className="my-5" pri="Browse all" sec="Open-Source UI elements made with CSS or Tailwind."/> 
             <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
-                <ComponentCard name="Dynamic Rounded Button">
-                    <Button scale={70}>Hove Me</Button>
-                </ComponentCard>
-            
-                <ComponentCard name="Normal Button" >
-                    <NormalBtn>Hove Me</NormalBtn>
-                </ComponentCard>
 
-                <ComponentCard name="Normal input-password">
-                    <Input type='password'/>
-                </ComponentCard>
+                {
+                    [...(Object.entries(inputs)), ...(Object.entries(buttons))].map(info => {
+                        let name = info[0];
+                        let Component = info[1];
+                        return <ComponentCard key={name} name={name}>
+                            <Component/>
+                        </ComponentCard>
+                    })
+                }
 
-                <ComponentCard name="Textarea">
-                    <Textarea/>
-                </ComponentCard>
-
-                <ComponentCard name="Circular Button" >
-                    <RoundButton>Click</RoundButton>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic Long width Button">
-                    <LongWidthBnt>Hove Me</LongWidthBnt>
-                </ComponentCard>
-
-                <ComponentCard name="Input">
-                    <Input01/>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic Button">
-                    <ClassicButton01>Hove Me</ClassicButton01>
-                </ComponentCard>
-
-                <ComponentCard name="Textarea default">
-                    <DefaultTextarea/>
-                </ComponentCard>
-
-                <ComponentCard name="Normal input-text">
-                    <Input/>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic animate-input-text">
-                    <ClassicInput/>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic animate-input-password ">
-                    <ClassicInput type='password'/>
-                </ComponentCard>
             </div>
         </Main>
     </div>)

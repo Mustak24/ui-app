@@ -1,7 +1,7 @@
-import { PathnameHeaading } from "@/Components/Heading";
+
 import { Asidebar, Main, MainHeading } from ".";
 import ComponentCard from "@/Components/ComponentCard";
-import { ClassicInput, DefaultTextarea, Input, Input01, Textarea } from "@/Components/Input";
+import * as Ints from '@/Components/Input';
 
 export default function Inputs(){
     return <main className="flex w-full h-full">
@@ -13,34 +13,15 @@ export default function Inputs(){
             />
 
             <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
-                <ComponentCard name="Input">
-                    <Input01/>
-                </ComponentCard>
-
-                <ComponentCard name="Textarea">
-                    <Textarea/>
-                </ComponentCard>
-
-                <ComponentCard name="Textarea default">
-                    <DefaultTextarea/>
-                </ComponentCard>
-
-                <ComponentCard name="Normal input-text">
-                    <Input/>
-                </ComponentCard>
-
-                <ComponentCard name="Normal input-password">
-                    <Input type='password'/>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic animate-input-text">
-                    <ClassicInput/>
-                </ComponentCard>
-
-                <ComponentCard name="Dynamic animate-input-password ">
-                    <ClassicInput type='password'/>
-                </ComponentCard>
-
+                {
+                    Object.entries(Ints).map(info => {
+                        let name = info[0];
+                        let Input = info[1];
+                        return <ComponentCard key={name} name={name}>
+                            <Input/>
+                        </ComponentCard>
+                    })
+                }
             </div>
         </Main>
     </main>
