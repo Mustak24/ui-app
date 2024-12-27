@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react"
 import { TbCubeSend } from "react-icons/tb"
 
 
@@ -10,10 +11,19 @@ export function NormalBtn({children='Hover Me', className='', onClick=()=>{}}){
 }
 
 
-export function Button({isLoading=false, loadingInnerHTML='Wait ...', className='', text='royalblue', bg='white', children='Hover Me', onClick=()=>{}, scale=300 }) {
+export function Button({isLoading=false, loadingInnerHTML='Wait ...', className='', text='royalblue', bg='white', children='Hover Me', onClick=()=>{}}) {
+
+    const button = useRef(null);
+    const [scale, setScale] = useState(0);
+
+    useEffect(() => {
+        if(!button.current) return;
+        setScale((button.current.offsetWidth)/4);
+    }, [button])
+
     return (
-        <button
-            className={`${className} relative z-[1] font-bold overflow-hidden shadow-[0_0_10px_rgb(0,0,0,.3)] px-5 min-h-10 z-1 rounded-full flex items-center justify-center flex-col text-center transition-all duration-500 text-[var(--text)] max-sm:active:text-[var(--bg)] sm:hover:text-[var(--bg)] bg-[var(--bg)] sm:hover:bg-transparent max-sm:active:bg-transparent active:after:content-[''] after:border-2 after:border-[var(--text)] after:self-start after:z-[-1] after:rounded-full before:content-[''] before:self-end before:z-[-1] before:border-2 before:border-[var(--text)] before:rounded-full before:transition-all after:transition-all max-sm:active:before:scale-[150] max-sm:active:after:scale-[150] sm:hover:before:scale-[var(--scale)] sm:hover:after:scale-[var(--scale)]`}
+        <button ref={button}
+            className={`${className} relative z-[1] font-bold overflow-hidden shadow-[0_0_10px_rgb(0,0,0,.3)] px-5 min-h-10 z-1 rounded-full flex items-center justify-center flex-col text-center transition-all duration-500 text-[var(--text)] max-sm:active:text-[var(--bg)] sm:hover:text-[var(--bg)] bg-[var(--bg)] sm:hover:bg-transparent max-sm:active:bg-transparent active:after:content-[''] after:border-2 after:border-[var(--text)] after:self-start after:z-[-1] after:rounded-full before:content-[''] before:self-end before:z-[-1] before:border-2 before:border-[var(--text)] before:rounded-full before:transition-all after:transition-all max-sm:active:before:scale-[var(--scale)] max-sm:active:after:scale-[var(--scale)] sm:hover:before:scale-[var(--scale)] sm:hover:after:scale-[var(--scale)]`}
             style={{ '--bg': bg, '--text': text, '--scale':scale }}
             onClick={onClick || function () {}}
             disabled={isLoading}
@@ -31,11 +41,11 @@ export function Button({isLoading=false, loadingInnerHTML='Wait ...', className=
     )
 }
 
-export function RoundButton({tailwindcss='', text='royalblue', onClick=()=>{}, children='Click'}) {
+export function RoundButton({className='', text='royalblue', onClick=()=>{}, children='Click'}) {
 
     return (
         <button
-            className={`${tailwindcss} relative text-[9px] font-bold font-sans cursor-pointer z-[1] transition-all duration-500 hover:text-white flex items-center justify-center size-10 overflow-hidden rounded-full border-2 after:contact-[''] after:z-[-1] after:absolute after:size-10 after:top-[-80%] after:rounded-[40%] hover:after:top-[20%] after:duration-500 after:transition-all text-[var(--text)] border-[var(--text)] after:bg-[var(--text)] hover:shadow-[0_0_20px_2px_var(--text)]`}
+            className={`${className} relative text-[9px] font-bold font-sans cursor-pointer z-[1] transition-all duration-500 hover:text-white flex items-center justify-center size-10 overflow-hidden rounded-full border-2 after:contact-[''] after:z-[-1] after:absolute after:size-10 after:top-[-80%] after:rounded-[40%] hover:after:top-[20%] after:duration-500 after:transition-all text-[var(--text)] border-[var(--text)] after:bg-[var(--text)] hover:shadow-[0_0_20px_2px_var(--text)]`}
             onClick={onClick}
             style={{'--text': text}}
         >
@@ -64,10 +74,10 @@ export function LongWidthBnt({ children='Click', isLoading=false, loadingInnerHT
     </button>)
 }
 
-export function ClassicButton01({ tailwindcss = '', isLoading = false, loadingInnerHTML = 'Wait  das dasd...', innerHTML = 'Click', text='royalblue', bg='white' }) {
+export function ClassicButton01({ className = '', isLoading = false, loadingInnerHTML = 'Wait  das dasd...', innerHTML = 'Click', text='royalblue', bg='white' }) {
 
     return (<>
-        <button className={`${tailwindcss} min-h-10 font-sans flex items-center justify-center relative transition-all duration-300 shadow-[0_0_10px_rgb(0,0,0,.3)] overflow-hidden text-[var(--text)] active:text-[var(--bg)] sm:hover:text-[var(--bg)] bg-[var(--bg)] sm:hover:bg-transparent max-sm:active:bg-transparent font-bold px-5 rounded-full z-[1] after:content-[''] after:absolute after:z-[-1] after:bg-[var(--text)] after:size-full after:rotate-90 sm:hover:after:rotate-0 max-sm:active:after:rotate-0 after:invisible hover:after:visible after:origin-bottom-right after:transition-all sm:after:duration-300 before:content-[''] before:z-[-1] before:absolute before:invisible hover:before:visible before:size-full before:bg-[var(--text)] before:rotate-90 sm:hover:before:rotate-0 max-sm:active:before:rotate-0 before:origin-top-left before:transition-all sm:before:duration-300 group`}
+        <button className={`${className} min-h-10 font-sans flex items-center justify-center relative transition-all duration-300 shadow-[0_0_10px_rgb(0,0,0,.3)] overflow-hidden text-[var(--text)] active:text-[var(--bg)] sm:hover:text-[var(--bg)] bg-[var(--bg)] sm:hover:bg-transparent max-sm:active:bg-transparent font-bold px-5 rounded-full z-[1] after:content-[''] after:absolute after:z-[-1] after:bg-[var(--text)] after:size-full after:rotate-90 sm:hover:after:rotate-0 max-sm:active:after:rotate-0 after:invisible hover:after:visible after:origin-bottom-right after:transition-all sm:after:duration-300 before:content-[''] before:z-[-1] before:absolute before:invisible hover:before:visible before:size-full before:bg-[var(--text)] before:rotate-90 sm:hover:before:rotate-0 max-sm:active:before:rotate-0 before:origin-top-left before:transition-all sm:before:duration-300 group`}
             style={{ '--bg': bg, '--text': text }}
         >
             {

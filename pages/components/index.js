@@ -40,8 +40,8 @@ export function Asidebar(){
                 <Link href={'/components/popovers'}>
                     <UnderlineBox innerText="Popover" className='pl-0 cursor-pointer' />
                 </Link>
-                <Link href={'/components/cards'}>
-                    <UnderlineBox innerText="Cards" className='pl-0 cursor-pointer' />
+                <Link href={'/components/auto-slider'}>
+                    <UnderlineBox innerText="Auto Slider" className='pl-0 cursor-pointer' />
                 </Link>
                 <Link href={'/components/alerts'}>
                     <UnderlineBox innerText="Alerts" className='pl-0 cursor-pointer' />

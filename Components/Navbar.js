@@ -26,7 +26,7 @@ const navigation = {
         {title: 'Components', href: '/components'},
         {title: 'Inputs', href: '/components/inputs'},
         {title: 'Buttons', href: '/components/buttons'},
-        {title: 'Cards', href: '/components/cards'},
+        {title: 'Auto Slider', href: '/components/auto-slider'},
         {title: 'Loaders', href: '/components/loaders'},
         {title: 'Popovers', href: '/components/popovers'},
     ]
